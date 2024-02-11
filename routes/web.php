@@ -32,6 +32,7 @@ Route::resources(['cart' => CartController::class]);
 Route::get('/cart/delete-product/{rowId}',[CartController::class,'delete'])->name('cart.delete');
 Route::post('/cart/update-product',[CartController::class,'updateProduct'])->name('cart.update-product');
 Route::get('/checkout',[CheckoutController::class,'index'])->name('checkout');
+Route::post('/new-order', [CheckoutController::class, 'newOrder'])->name('new-order');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
 
